@@ -181,7 +181,7 @@ func getCloudWatchMetrics(metricname string, rdsName string, unit string) (*floa
 	if err != nil {
 		return nil, err
 	}
-	if metrics != nil && metrics.Datapoints != nil && len(metrics.Datapoints) > 1 {
+	if metrics != nil && metrics.Datapoints != nil && len(metrics.Datapoints) >= 1 {
 		var minimumTimeDifference float64
 		var timeDifference float64
 		var value *float64
